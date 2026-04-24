@@ -22,13 +22,12 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 h-20 md:h-24 flex items-center transition-all duration-300">
-      <nav className="container mx-auto px-4 w-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-2xl border-b border-white/[0.04] h-16 md:h-20 flex items-center transition-all duration-300">
+      <nav className="container mx-auto max-w-7xl px-4 w-full">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div onClick={() => navigate('/')} className="flex items-center">
-            {/* Desktop uses md size, Mobile uses sm size implicitly via CSS classes in Logo component or explicitly if needed */}
-            <Logo size="md" className="py-2" />
+            <Logo size="sm" className="py-2" />
           </div>
 
           {/* Desktop Navigation */}
@@ -37,29 +36,27 @@ const Header = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`transition-colors text-sm font-medium ${
+                className={`transition-all duration-300 text-xs font-medium tracking-[0.12em] uppercase ${
                   isActive(link.path)
-                    ? 'text-[#dbf3fd]'
-                    : 'text-gray-300 hover:text-[#dbf3fd]'
+                    ? 'text-white'
+                    : 'text-white/40 hover:text-white/80'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            
-            <Button
+
+            <button
               onClick={toggleLanguage}
-              variant="outline"
-              size="sm"
-              className="gap-2 border-[#dbf3fd]/30 hover:bg-[#dbf3fd]/10 h-9"
+              className="flex items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors text-xs tracking-wider uppercase"
             >
-              <Globe className="w-4 h-4" />
+              <Globe className="w-3.5 h-3.5" />
               {language.toUpperCase()}
-            </Button>
+            </button>
 
             <Button
               onClick={() => navigate('/login')}
-              className="bg-[#dbf3fd] hover:bg-white text-slate-900 font-bold h-9 px-6 rounded-full shadow-[0_0_15px_rgba(219,243,253,0.3)] transition-all"
+              className="bg-transparent hover:bg-white/[0.05] text-white/60 hover:text-white font-medium text-xs tracking-[0.1em] uppercase h-9 px-5 rounded-lg border border-white/[0.08] hover:border-white/20 transition-all duration-300"
             >
               Sign In
             </Button>
@@ -68,9 +65,9 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white/60 hover:text-white p-2 transition-colors"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
@@ -81,7 +78,7 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4 border-t border-slate-800 pt-4 bg-slate-900 absolute left-0 right-0 top-full px-4 shadow-xl border-b"
+              className="md:hidden border-t border-white/[0.04] bg-black/95 backdrop-blur-2xl absolute left-0 right-0 top-full px-4 py-6 shadow-2xl"
             >
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
@@ -89,32 +86,30 @@ const Header = () => {
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`transition-colors text-lg ${
+                    className={`transition-all text-sm tracking-wider uppercase ${
                       isActive(link.path)
-                        ? 'text-[#dbf3fd] font-semibold'
-                        : 'text-gray-300 hover:text-[#dbf3fd]'
+                        ? 'text-white font-semibold'
+                        : 'text-white/40 hover:text-white/70'
                     }`}
                   >
                     {link.name}
                   </Link>
                 ))}
-                
-                <Button
+
+                <button
                   onClick={toggleLanguage}
-                  variant="outline"
-                  size="sm"
-                  className="gap-2 border-[#dbf3fd]/30 hover:bg-[#dbf3fd]/10 w-fit"
+                  className="flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors text-sm tracking-wider uppercase w-fit"
                 >
                   <Globe className="w-4 h-4" />
                   {language.toUpperCase()}
-                </Button>
+                </button>
 
                 <Button
                   onClick={() => {
                     navigate('/login');
                     setIsMenuOpen(false);
                   }}
-                  className="bg-[#dbf3fd] hover:bg-white text-slate-900 font-bold w-full rounded-xl py-6 mt-2 shadow-[0_0_15px_rgba(219,243,253,0.2)]"
+                  className="bg-white/[0.05] hover:bg-white/10 text-white border border-white/[0.08] font-medium w-full rounded-xl py-5 mt-2 text-sm tracking-wider uppercase transition-all"
                 >
                   Sign In
                 </Button>

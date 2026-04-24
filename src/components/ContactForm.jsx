@@ -39,32 +39,40 @@ const ContactForm = () => {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = '573212826388'; // Updated phone number
+    const phoneNumber = '573212826388';
     const message = encodeURIComponent(
       `Hi! I'm interested in ${formData.service || 'your services'}. My name is ${formData.name || '[Name]'}.`
     );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
+  const inputClasses = "w-full px-4 py-3 bg-cf-surface border border-white/[0.06] rounded-xl focus:outline-none focus:ring-1 focus:ring-white/20 focus:border-white/20 transition-all text-white text-sm placeholder-white/20 tracking-wide";
+
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
-      <div className="container mx-auto px-4">
+    <section className="py-24 md:py-32 bg-black relative overflow-hidden">
+      {/* Separator */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+      <div className="container mx-auto max-w-7xl px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <p className="text-xs font-medium tracking-[0.25em] uppercase text-white/30 mb-4">
+            CONTACT
+          </p>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             {t.contact.title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm text-white/40 max-w-md mx-auto">
             {t.contact.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -72,9 +80,9 @@ const ContactForm = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="name" className="block text-[10px] font-medium mb-2 text-white/30 tracking-[0.15em] uppercase">
                   {t.contact.form.name}
                 </label>
                 <input
@@ -85,12 +93,12 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   placeholder={t.contact.form.namePlaceholder}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dbf3fd] focus:border-transparent transition-all text-white placeholder-gray-500"
+                  className={inputClasses}
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="email" className="block text-[10px] font-medium mb-2 text-white/30 tracking-[0.15em] uppercase">
                   {t.contact.form.email}
                 </label>
                 <input
@@ -101,12 +109,12 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   placeholder={t.contact.form.emailPlaceholder}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dbf3fd] focus:border-transparent transition-all text-white placeholder-gray-500"
+                  className={inputClasses}
                 />
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="service" className="block text-[10px] font-medium mb-2 text-white/30 tracking-[0.15em] uppercase">
                   {t.contact.form.service}
                 </label>
                 <select
@@ -115,7 +123,7 @@ const ContactForm = () => {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dbf3fd] focus:border-transparent transition-all text-white"
+                  className={inputClasses}
                 >
                   <option value="">{t.contact.form.servicePlaceholder}</option>
                   {t.contact.services.map((service, index) => (
@@ -125,7 +133,7 @@ const ContactForm = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
+                <label htmlFor="message" className="block text-[10px] font-medium mb-2 text-white/30 tracking-[0.15em] uppercase">
                   {t.contact.form.message}
                 </label>
                 <textarea
@@ -136,21 +144,21 @@ const ContactForm = () => {
                   required
                   rows={5}
                   placeholder={t.contact.form.messagePlaceholder}
-                  className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dbf3fd] focus:border-transparent transition-all resize-none text-white placeholder-gray-500"
+                  className={`${inputClasses} resize-none`}
                 />
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-gradient-to-r from-[#dbf3fd] to-blue-500 hover:from-[#dbf3fd]/90 hover:to-blue-600 text-slate-900 font-semibold"
+                  className="flex-1 shimmer-btn bg-white hover:bg-white/90 text-black font-bold text-xs tracking-[0.1em] uppercase h-12 rounded-xl transition-all"
                 >
                   {isSubmitting ? (
                     t.contact.form.sending
                   ) : (
                     <>
-                      <Send className="w-4 h-4 mr-2" />
+                      <Send className="w-3.5 h-3.5 mr-2" />
                       {t.contact.form.submit}
                     </>
                   )}
@@ -159,10 +167,9 @@ const ContactForm = () => {
                 <Button
                   type="button"
                   onClick={handleWhatsApp}
-                  variant="outline"
-                  className="flex-1 border-[#dbf3fd]/30 hover:bg-[#dbf3fd]/10"
+                  className="flex-1 bg-transparent border border-white/[0.06] hover:border-white/20 text-white/50 hover:text-white font-medium text-xs tracking-[0.1em] uppercase h-12 rounded-xl transition-all"
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <MessageCircle className="w-3.5 h-3.5 mr-2" />
                   {t.contact.form.whatsapp}
                 </Button>
               </div>
@@ -175,58 +182,57 @@ const ContactForm = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <h3 className="text-2xl font-bold mb-6 text-[#dbf3fd]">
+            <div className="bg-cf-surface rounded-2xl p-8 border border-white/[0.06]">
+              <h3 className="text-xs font-bold mb-6 text-white/50 tracking-[0.2em] uppercase">
                 Contact Information
               </h3>
-              
-              <div className="space-y-6">
+
+              <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#dbf3fd] to-blue-500 flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-4 h-4 text-white/30" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white mb-1">Email</p>
-                    <a href={`mailto:${t.contact.info.email}`} className="text-gray-400 hover:text-[#dbf3fd] transition-colors">
+                    <p className="font-medium text-white text-sm mb-0.5">Email</p>
+                    <a href={`mailto:${t.contact.info.email}`} className="text-sm text-white/30 hover:text-white/60 transition-colors">
                       {t.contact.info.email}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-4 h-4 text-white/30" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white mb-1">Phone</p>
-                    <a href={`tel:${t.contact.info.phone}`} className="text-gray-400 hover:text-[#dbf3fd] transition-colors">
+                    <p className="font-medium text-white text-sm mb-0.5">Phone</p>
+                    <a href={`tel:${t.contact.info.phone}`} className="text-sm text-white/30 hover:text-white/60 transition-colors">
                       {t.contact.info.phone}
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 text-white/30" />
                   </div>
                   <div>
-                    <p className="font-semibold text-white mb-1">{t.contact.info.name}</p> {/* Display name here */}
-                    <p className="text-gray-400">
-                      San Francisco, CA<br />
-                      United States
+                    <p className="font-medium text-white text-sm mb-0.5">{t.contact.info.name}</p>
+                    <p className="text-sm text-white/30">
+                      Pereira, Colombia
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#dbf3fd]/10 to-blue-500/10 rounded-xl p-8 border border-[#dbf3fd]/20">
-              <h4 className="text-xl font-bold mb-4 text-white">
+            <div className="bg-white/[0.02] rounded-2xl p-8 border border-white/[0.04]">
+              <h4 className="text-xs font-bold mb-4 text-white/40 tracking-[0.15em] uppercase">
                 Business Hours
               </h4>
-              <div className="space-y-2 text-gray-300">
+              <div className="space-y-2 text-sm text-white/25">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 4:00 PM</p>
                 <p>Sunday: Closed</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -16,6 +16,22 @@ const PricingSection = () => {
     });
   };
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+  };
+
   const plans = [
     {
       name: t.pricing.starter.name,
@@ -23,7 +39,7 @@ const PricingSection = () => {
       features: t.pricing.starter.features,
       cta: t.pricing.starter.cta,
       highlighted: false,
-      gradient: 'from-blue-500 to-cyan-500'
+      material: 'PVC',
     },
     {
       name: t.pricing.professional.name,
@@ -32,7 +48,7 @@ const PricingSection = () => {
       features: t.pricing.professional.features,
       cta: t.pricing.professional.cta,
       highlighted: true,
-      gradient: 'from-purple-500 to-pink-500'
+      material: 'METAL',
     },
     {
       name: t.pricing.enterprise.name,
@@ -40,87 +56,140 @@ const PricingSection = () => {
       features: t.pricing.enterprise.features,
       cta: t.pricing.enterprise.cta,
       highlighted: false,
-      gradient: 'from-emerald-500 to-teal-500'
+      stealth: true,
+      material: 'CUSTOM',
     }
   ];
 
   return (
-    <section className="py-20 bg-slate-900">
-      <div className="container mx-auto px-4">
+    <section className="py-24 md:py-32 bg-black relative overflow-hidden">
+      {/* Separator */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+      <div className="container mx-auto max-w-6xl px-4">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <p className="text-xs font-medium tracking-[0.25em] uppercase text-white/30 mb-4">
+            {t.pricing?.eyebrow || 'PRICING'}
+          </p>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
             {t.pricing.title}
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm text-white/40 max-w-md mx-auto">
             {t.pricing.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Pricing Cards */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-start"
+        >
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: plan.highlighted ? 1.05 : 1.02 }}
-              className={`relative ${plan.highlighted ? 'md:-mt-4' : ''}`}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, y: -4 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+              className={`relative group ${plan.highlighted ? 'md:-mt-6' : ''}`}
             >
+              {/* Best Value Badge */}
               {plan.recommended && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                  <div className="bg-gradient-to-r from-[#dbf3fd] to-blue-500 text-slate-900 px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-                    <Sparkles className="w-4 h-4" />
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+                  <div className="shimmer-btn flex items-center gap-1.5 bg-white text-black px-4 py-1 rounded-full text-[10px] font-bold tracking-[0.15em] uppercase shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    <Sparkles className="w-3 h-3" />
                     {plan.recommended}
                   </div>
                 </div>
               )}
 
-              <div className={`${plan.highlighted ? 'bg-gradient-to-br ' + plan.gradient + ' p-[2px]' : 'bg-slate-800'} rounded-xl h-full`}>
-                <div className="bg-slate-800 rounded-xl p-8 h-full flex flex-col">
-                  <h3 className="text-2xl font-bold mb-2 text-white">
+              <div
+                className={`rounded-2xl h-full flex flex-col transition-all duration-500 ${
+                  plan.highlighted
+                    ? 'bg-cf-surface border border-white/[0.12] shadow-[0_0_40px_rgba(255,255,255,0.04)]'
+                    : plan.stealth
+                    ? 'bg-[#0a0a0a] border border-white/[0.04] hover:border-white/[0.06]'
+                    : 'bg-cf-surface border border-white/[0.06] hover:border-white/[0.08]'
+                } p-8 md:p-9`}
+              >
+                {/* Material Badge */}
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-lg font-bold text-white tracking-tight">
                     {plan.name}
                   </h3>
-                  
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-[#dbf3fd] to-blue-400 bg-clip-text text-transparent">
-                      {plan.price}
-                    </span>
-                    {plan.price !== 'Custom' && (
-                      <span className="text-gray-400 ml-2">/{t.pricing.monthly}</span>
-                    )}
-                  </div>
-
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-[#dbf3fd] flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    onClick={() => handlePlanClick(plan.name)}
-                    className={`w-full ${
+                  <span
+                    className={`text-[9px] font-bold tracking-[0.2em] uppercase px-2.5 py-1 rounded-full border ${
                       plan.highlighted
-                        ? 'bg-gradient-to-r from-[#dbf3fd] to-blue-500 hover:from-[#dbf3fd]/90 hover:to-blue-600 text-slate-900'
-                        : 'bg-slate-700 hover:bg-slate-600 text-white'
-                    } font-semibold`}
+                        ? 'text-chrome border-white/[0.15] bg-white/[0.04]'
+                        : 'text-white/30 border-white/[0.06]'
+                    }`}
                   >
-                    {plan.cta}
-                  </Button>
+                    {plan.material}
+                  </span>
                 </div>
+
+                {/* Price */}
+                <div className="mb-8">
+                  <span className={`text-4xl md:text-5xl font-extrabold tracking-tight ${
+                    plan.highlighted ? 'text-chrome' : plan.stealth ? 'text-white/60' : 'text-white'
+                  }`}>
+                    {plan.price}
+                  </span>
+                  {plan.price !== 'Custom' && plan.price !== 'Personalizado' && (
+                    <span className="text-white/20 text-sm ml-2">/{t.pricing.monthly}</span>
+                  )}
+                </div>
+
+                {/* Features */}
+                <ul className="space-y-3.5 mb-10 flex-grow">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
+                        plan.highlighted ? 'text-white/60' : 'text-white/25'
+                      }`} />
+                      <span className={`text-sm leading-relaxed ${
+                        plan.highlighted ? 'text-white/60' : plan.stealth ? 'text-white/30' : 'text-white/40'
+                      }`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Enterprise copy */}
+                {plan.stealth && (
+                  <p className="text-xs text-white/20 mb-6 leading-relaxed">
+                    {t.pricing?.enterpriseNote || 'For sales teams and real estate agencies.'}
+                  </p>
+                )}
+
+                {/* CTA Button */}
+                <Button
+                  onClick={() => handlePlanClick(plan.name)}
+                  className={`w-full h-12 text-xs font-bold tracking-[0.12em] uppercase rounded-xl transition-all duration-300 ${
+                    plan.highlighted
+                      ? 'shimmer-btn bg-white hover:bg-white/90 text-black shadow-[0_0_25px_rgba(255,255,255,0.1)]'
+                      : plan.stealth
+                      ? 'bg-transparent border border-white/[0.08] hover:border-white/20 text-white/50 hover:text-white/80'
+                      : 'bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.06] text-white/60 hover:text-white'
+                  }`}
+                >
+                  {plan.cta}
+                  {plan.highlighted && <ArrowRight className="w-3.5 h-3.5 ml-2" />}
+                </Button>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

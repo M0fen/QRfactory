@@ -2,19 +2,20 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
-      services: 'Services',
+      services: 'How It Works',
       pricing: 'Pricing',
       contact: 'Contact'
     },
     hero: {
-      title: 'Transform QR Codes into',
-      titleHighlight: 'Branded Experiences',
-      subtitle: 'Create stunning landing pages, interactive catalogs, and real-time analytics dashboards that elevate your brand and engage your customers.',
-      ctaPrimary: 'Get Started',
-      ctaSecondary: 'Learn More',
-      qrPreview: 'Scan to Preview',
-      qrPreviewDesktop: 'Click to generate a preview code',
-      qrPreviewMobile: 'Tap here to generate a preview code'
+      badge: 'Premium NFC Technology',
+      title: 'Elite Networking',
+      titleHighlight: "Without Friction.",
+      subtitle: 'Share your identity instantly with NFC technology. Update your destination in real time from your dashboard — no reprints, no limits.',
+      ctaPrimary: 'Shop Cards',
+      ctaSecondary: 'Go to QR Builder',
+      qrPreview: 'Tap. Connect. Done.',
+      qrPreviewDesktop: 'One tap to share your entire digital identity',
+      qrPreviewMobile: 'NFC-powered smart cards with dynamic profiles'
     },
     generator: {
       inputPlaceholder: 'Enter target URL...',
@@ -22,195 +23,211 @@ export const translations = {
       exportButton: 'Export your QR here :)'
     },
     services: {
-      title: 'Our Services',
-      subtitle: 'Comprehensive digital solutions tailored to your business needs',
+      eyebrow: 'THE PROCESS',
+      title: 'How It Works',
+      subtitle: 'From design to connection in three steps',
+      step1Label: 'STEP 01',
+      step2Label: 'STEP 02',
+      step3Label: 'STEP 03',
       service1: {
-        title: 'Custom QR Landing Pages',
-        description: 'Turn QR codes into branded experiences',
+        title: 'Design',
+        description: 'Laser-engraved with your brand. Premium metal or PVC, crafted with precision.',
+        tags: ['PVC', 'Metal', 'Laser Engraved'],
         useCases: [
-          'Product showcases',
-          'Event registration',
-          'Digital menus',
-          'Marketing campaigns'
+          'Custom laser engraving with your brand',
+          'PVC or metal card options',
+          'Water & scratch-resistant finish',
+          'Luxury unboxing experience'
         ]
       },
       service2: {
-        title: 'Interactive Digital Catalogs',
-        description: 'Fast, elegant, easy to update',
+        title: 'Tap',
+        description: 'One touch transfers your entire digital identity — portfolio, social links, booking page, anything.',
         useCases: [
-          'Product portfolios',
-          'Service listings',
-          'Real-time inventory',
-          'Multi-language support'
+          'No app downloads required',
+          'Works with all modern smartphones',
+          'Instant contact sharing',
+          'Seamless first impressions'
         ]
       },
       service3: {
-        title: 'Real-time Analytics Dashboards',
-        description: 'Track performance instantly',
+        title: 'Connect',
+        description: 'Update your destination in real time. Dynamic routing from your dashboard.',
         useCases: [
-          'Scan tracking',
-          'User engagement metrics',
-          'Conversion analytics',
-          'Custom reports'
+          'Swap between portfolio, LinkedIn, or booking link',
+          'A/B test landing pages in real time',
+          'Track every interaction',
+          'Instant URL updates from your dashboard'
         ]
-      }
+      },
+      statsNumber: '10K+',
+      statsLabel: 'Taps Tracked'
     },
     industries: {
-      title: 'Industries We Serve',
-      subtitle: 'Tailored solutions for every sector',
+      title: 'Who Uses Smart Cards?',
+      subtitle: 'Professionals and brands that refuse to be forgettable',
       retail: {
-        name: 'Retail',
-        useCases: ['In-store product info', 'Promotional campaigns', 'Customer loyalty programs']
+        name: 'Entrepreneurs',
+        useCases: ['Instant networking at events', 'Always-current contact info', 'Professional first impression']
       },
       fashion: {
-        name: 'Fashion',
-        useCases: ['Lookbook presentations', 'Virtual try-ons', 'Collection launches']
+        name: 'Creative Agencies',
+        useCases: ['Link directly to portfolio', 'Team-wide branded cards', 'Client onboarding in one tap']
       },
       homeTextiles: {
-        name: 'Home Textiles',
-        useCases: ['Fabric catalogs', 'Care instructions', 'Design galleries']
+        name: 'Real Estate',
+        useCases: ['Property listings on tap', 'Agent profile & reviews', 'Direct booking integration']
       },
       ecommerce: {
-        name: 'E-commerce',
-        useCases: ['Product details', 'Customer reviews', 'Quick checkout']
+        name: 'Restaurants & Hospitality',
+        useCases: ['Digital menu access', 'Google review redirect', 'Reservation link sharing']
       },
       services: {
-        name: 'Service Businesses',
-        useCases: ['Appointment booking', 'Service menus', 'Client testimonials']
+        name: 'Healthcare',
+        useCases: ['Doctor profiles & credentials', 'Appointment scheduling', 'Patient info portals']
       },
       agencies: {
-        name: 'Agencies',
-        useCases: ['Portfolio showcases', 'Client proposals', 'Campaign tracking']
+        name: 'Sales Teams',
+        useCases: ['CRM-integrated contact sharing', 'Lead capture via scan', 'Performance analytics per rep']
       }
     },
     testimonials: {
+      eyebrow: 'SOCIAL PROOF',
       title: 'What Our Clients Say',
-      subtitle: 'Trusted by businesses worldwide',
+      subtitle: 'Trusted by professionals who take their brand seriously',
       testimonial1: {
         name: 'Maria González',
-        role: 'Marketing Director, Fashion Brand',
-        text: 'The QR landing pages transformed our fashion shows. Customers can now instantly access our entire collection with a simple scan. Sales increased by 45%!'
+        role: 'Founder, Boutique Design Studio',
+        text: 'I replaced 500 paper business cards with a single NFC card. I update my link monthly and the analytics show me exactly who tapped and when. Game changer.'
       },
       testimonial2: {
         name: 'Carlos Mendoza',
-        role: 'Owner, Restaurant Chain',
-        text: 'Our digital menus are now interactive and always up-to-date. The analytics dashboard helps us understand customer preferences better than ever.'
+        role: 'Commercial Director, Tech Startup',
+        text: 'Our whole sales team has branded smart cards now. The laser engraving looks incredible, and the dynamic routing means we push prospects to the latest landing page every time.'
       },
       testimonial3: {
         name: 'Sofia Martinez',
-        role: 'CEO, E-commerce Platform',
-        text: 'The interactive catalogs are game-changing. Our customers love the seamless experience, and we can update products in real-time.'
+        role: 'Real Estate Agent',
+        text: 'I hand my card to a client, they tap their phone, and instantly see my listings, reviews, and booking calendar. No app download, no friction. Pure magic.'
       },
       testimonial4: {
         name: 'Diego Ramirez',
         role: 'Marketing Manager, Retail Group',
-        text: 'Real-time analytics give us insights we never had before. We can track customer engagement and optimize our campaigns instantly.'
+        text: 'The analytics dashboard alone is worth it. We track engagement per rep, optimize our event strategy, and the ROI was visible within the first month.'
       }
     },
     pricing: {
+      eyebrow: 'PRICING',
       title: 'Simple, Transparent Pricing',
-      subtitle: 'Choose the perfect plan for your business',
+      subtitle: 'Choose the card that matches your ambition',
       monthly: 'month',
+      enterpriseNote: 'For sales teams and real estate agencies.',
       starter: {
-        name: 'Starter',
-        price: '$49',
+        name: 'Essential',
+        price: '$29',
         features: [
-          '5 QR Landing Pages',
-          'Basic Analytics',
-          'Email Support',
-          'Mobile Responsive',
-          'Custom Branding'
+          '1 NFC Smart Card (PVC)',
+          'Dynamic link routing',
+          'Basic scan analytics',
+          'Mobile-optimized profile',
+          'Email support'
         ],
-        cta: 'Start Free Trial'
+        cta: 'Order Now'
       },
       professional: {
-        name: 'Professional',
-        price: '$149',
-        recommended: 'Most Popular',
+        name: 'Pro',
+        price: '$79',
+        recommended: 'Best Value',
         features: [
-          'Unlimited QR Pages',
-          'Advanced Analytics Dashboard',
-          'Priority Support',
-          'Interactive Catalogs',
-          'WhatsApp Integration',
-          'Custom Domain',
-          'A/B Testing'
+          '1 NFC Smart Card (Metal)',
+          'Custom laser engraving',
+          'Advanced analytics dashboard',
+          'QR Builder access included',
+          'Priority support',
+          'Custom branded profile',
+          'Team management (up to 5)'
         ],
-        cta: 'Get Started'
+        cta: 'Go Pro'
       },
       enterprise: {
         name: 'Enterprise',
         price: 'Custom',
         features: [
-          'Everything in Professional',
-          'Dedicated Account Manager',
-          'Custom Integrations',
-          'White-label Solution',
-          'SLA Guarantee',
-          'Training & Onboarding',
-          'API Access'
+          'Everything in Pro',
+          'Unlimited team cards',
+          'Dedicated account manager',
+          'White-label solution',
+          'CRM integrations',
+          'SLA guarantee',
+          'API access'
         ],
-        cta: 'Contact Sales'
+        cta: 'Request a Quote'
       }
+    },
+    qrBanner: {
+      title: 'Looking to create custom QR codes?',
+      subtitle: 'Our QR Engine lets you generate branded, trackable QR codes in seconds.',
+      cta: 'Open QR Builder'
     },
     contact: {
       title: 'Get in Touch',
-      subtitle: 'Ready to transform your digital presence? Let\'s talk!',
+      subtitle: "Ready to upgrade your networking game? Let's talk.",
       form: {
         name: 'Full Name',
         namePlaceholder: 'John Doe',
         email: 'Email Address',
         emailPlaceholder: 'john@example.com',
-        service: 'Service Interest',
-        servicePlaceholder: 'Select a service',
+        service: 'Interest',
+        servicePlaceholder: 'Select an option',
         message: 'Message',
-        messagePlaceholder: 'Tell us about your project...',
+        messagePlaceholder: 'Tell us about your needs...',
         submit: 'Send Message',
         whatsapp: 'Chat on WhatsApp',
         sending: 'Sending...'
       },
       services: [
-        'QR Landing Pages',
-        'Interactive Catalogs',
-        'Analytics Dashboards',
-        'Custom Solution'
+        'NFC Smart Cards',
+        'Team Orders',
+        'Custom Branding',
+        'Enterprise Solution'
       ],
       info: {
-        name: 'David VERA', // Added for consistency although not directly used in existing components
+        name: 'David VERA',
         email: 'david.vera9713@gmail.com',
         phone: '+573212826388',
         location: 'Location'
       }
     },
     footer: {
-      tagline: 'Transform your QR codes into branded experiences',
+      tagline: 'Premium NFC smart cards with dynamic digital profiles.',
       quickLinks: 'Quick Links',
       followUs: 'Follow Us',
-      copyright: '© 2026 QR Factory. All rights reserved.',
+      copyright: '© 2026 CardFactory. All rights reserved.',
       email: 'david.vera9713@gmail.com'
     },
     notFound: {
       title: '404 - Page Not Found',
-      subtitle: 'The page you\'re looking for doesn\'t exist.',
+      subtitle: "The page you're looking for doesn't exist.",
       backHome: 'Back to Home'
     }
   },
   es: {
     nav: {
       home: 'Inicio',
-      services: 'Servicios',
+      services: 'Cómo Funciona',
       pricing: 'Precios',
       contact: 'Contacto'
     },
     hero: {
-      title: 'Transforma Códigos QR en',
-      titleHighlight: 'Experiencias de Marca',
-      subtitle: 'Crea páginas de destino impresionantes, catálogos interactivos y paneles de análisis en tiempo real que eleven tu marca y cautiven a tus clientes.',
-      ctaPrimary: 'Comenzar',
-      ctaSecondary: 'Saber Más',
-      qrPreview: 'Escanear Vista Previa',
-      qrPreviewDesktop: 'Clic para generar un codigo de previsualización',
-      qrPreviewMobile: 'Toca aquí para generar un codigo de previsualización'
+      badge: 'Tecnología NFC Premium',
+      title: 'Networking de Élite',
+      titleHighlight: 'Sin Fricción.',
+      subtitle: 'Comparte tu identidad al instante con tecnología NFC. Actualiza tu destino en tiempo real desde tu dashboard — sin reimprimir, sin límites.',
+      ctaPrimary: 'Comprar mi Tarjeta',
+      ctaSecondary: 'Ir al Generador QR',
+      qrPreview: 'Toca. Conecta. Listo.',
+      qrPreviewDesktop: 'Un toque para compartir toda tu identidad digital',
+      qrPreviewMobile: 'Tarjetas inteligentes NFC con perfiles dinámicos'
     },
     generator: {
       inputPlaceholder: 'Ingrese la URL de destino...',
@@ -218,158 +235,173 @@ export const translations = {
       exportButton: 'Aquí puede exportar su QR:)'
     },
     services: {
-      title: 'Nuestros Servicios',
-      subtitle: 'Soluciones digitales integrales adaptadas a tus necesidades',
+      eyebrow: 'EL PROCESO',
+      title: 'Cómo Funciona',
+      subtitle: 'Del diseño a la conexión en tres pasos',
+      step1Label: 'PASO 01',
+      step2Label: 'PASO 02',
+      step3Label: 'PASO 03',
       service1: {
-        title: 'Páginas QR Personalizadas',
-        description: 'Convierte códigos QR en experiencias de marca',
+        title: 'Diseña',
+        description: 'Grabado láser con tu marca. Producción inmediata en Pereira. Metal premium o PVC.',
+        tags: ['PVC', 'Metal', 'Grabado Láser'],
         useCases: [
-          'Exhibiciones de productos',
-          'Registro de eventos',
-          'Menús digitales',
-          'Campañas de marketing'
+          'Grabado láser personalizado con tu marca',
+          'Opciones de tarjeta PVC o metal',
+          'Acabado resistente al agua y rayones',
+          'Experiencia de unboxing de lujo'
         ]
       },
       service2: {
-        title: 'Catálogos Digitales Interactivos',
-        description: 'Rápidos, elegantes, fáciles de actualizar',
+        title: 'Toca',
+        description: 'Un toque transfiere toda tu identidad digital — portafolio, redes sociales, agenda, lo que sea.',
         useCases: [
-          'Portafolios de productos',
-          'Listados de servicios',
-          'Inventario en tiempo real',
-          'Soporte multiidioma'
+          'Sin descargas de app necesarias',
+          'Compatible con todos los smartphones modernos',
+          'Compartir contacto instantáneo',
+          'Primeras impresiones impecables'
         ]
       },
       service3: {
-        title: 'Paneles de Análisis en Tiempo Real',
-        description: 'Rastrea el rendimiento al instante',
+        title: 'Conecta',
+        description: 'Actualiza tu destino en tiempo real. Enrutamiento dinámico desde tu dashboard.',
         useCases: [
-          'Seguimiento de escaneos',
-          'Métricas de participación',
-          'Análisis de conversión',
-          'Informes personalizados'
+          'Alterna entre portafolio, LinkedIn o agenda',
+          'Pruebas A/B de landing pages en tiempo real',
+          'Rastrea cada interacción',
+          'Actualizaciones instantáneas desde tu dashboard'
         ]
-      }
+      },
+      statsNumber: '10K+',
+      statsLabel: 'Toques Rastreados'
     },
     industries: {
-      title: 'Industrias que Atendemos',
-      subtitle: 'Soluciones personalizadas para cada sector',
+      title: '¿Quién Usa Tarjetas Inteligentes?',
+      subtitle: 'Profesionales y marcas que se rehúsan a ser olvidados',
       retail: {
-        name: 'Retail',
-        useCases: ['Info de productos en tienda', 'Campañas promocionales', 'Programas de fidelidad']
+        name: 'Emprendedores',
+        useCases: ['Networking instantáneo en eventos', 'Info de contacto siempre actual', 'Primera impresión profesional']
       },
       fashion: {
-        name: 'Moda',
-        useCases: ['Presentaciones de lookbook', 'Pruebas virtuales', 'Lanzamientos de colección']
+        name: 'Agencias Creativas',
+        useCases: ['Enlace directo al portafolio', 'Tarjetas brandeadas para el equipo', 'Onboarding de clientes en un toque']
       },
       homeTextiles: {
-        name: 'Textiles para Hogar',
-        useCases: ['Catálogos de telas', 'Instrucciones de cuidado', 'Galerías de diseño']
+        name: 'Bienes Raíces',
+        useCases: ['Listados de propiedades al instante', 'Perfil y reseñas del agente', 'Integración de agenda directa']
       },
       ecommerce: {
-        name: 'E-commerce',
-        useCases: ['Detalles de productos', 'Reseñas de clientes', 'Compra rápida']
+        name: 'Restaurantes & Hospitalidad',
+        useCases: ['Acceso a menú digital', 'Redirección a reseñas en Google', 'Compartir enlace de reservaciones']
       },
       services: {
-        name: 'Negocios de Servicios',
-        useCases: ['Reserva de citas', 'Menús de servicios', 'Testimonios de clientes']
+        name: 'Salud',
+        useCases: ['Perfiles y credenciales médicas', 'Agendamiento de citas', 'Portales de información al paciente']
       },
       agencies: {
-        name: 'Agencias',
-        useCases: ['Portafolios', 'Propuestas a clientes', 'Seguimiento de campañas']
+        name: 'Equipos de Ventas',
+        useCases: ['Contactos integrados al CRM', 'Captura de leads por escaneo', 'Analíticas de rendimiento por rep']
       }
     },
     testimonials: {
+      eyebrow: 'PRUEBA SOCIAL',
       title: 'Lo Que Dicen Nuestros Clientes',
-      subtitle: 'Confiado por negocios en todo el mundo',
+      subtitle: 'La confianza de profesionales que se toman su marca en serio',
       testimonial1: {
         name: 'Maria González',
-        role: 'Directora de Marketing, Marca de Moda',
-        text: '¡Las páginas QR transformaron nuestros desfiles! Los clientes pueden acceder instantáneamente a toda nuestra colección. ¡Las ventas aumentaron un 45%!'
+        role: 'Fundadora, Estudio de Diseño Boutique',
+        text: 'Reemplacé 500 tarjetas de papel con una sola tarjeta NFC. Actualizo mi enlace mensualmente y las analíticas me muestran exactamente quién tocó y cuándo. Un cambio total.'
       },
       testimonial2: {
         name: 'Carlos Mendoza',
-        role: 'Propietario, Cadena de Restaurantes',
-        text: 'Nuestros menús digitales son interactivos y siempre actualizados. El panel de análisis nos ayuda a entender las preferencias mejor que nunca.'
+        role: 'Director Comercial, Startup Tech',
+        text: 'Todo nuestro equipo de ventas tiene tarjetas inteligentes brandeadas. El grabado láser se ve increíble, y el enrutamiento dinámico nos permite dirigir prospectos a la landing más reciente.'
       },
       testimonial3: {
         name: 'Sofia Martinez',
-        role: 'CEO, Plataforma E-commerce',
-        text: 'Los catálogos interactivos son revolucionarios. A nuestros clientes les encanta la experiencia fluida, y podemos actualizar productos en tiempo real.'
+        role: 'Agente de Bienes Raíces',
+        text: 'Le doy mi tarjeta al cliente, tocan su teléfono y al instante ven mis listados, reseñas y calendario de citas. Sin descargas, sin fricción. Pura magia.'
       },
       testimonial4: {
         name: 'Diego Ramirez',
         role: 'Gerente de Marketing, Grupo Retail',
-        text: 'Los análisis en tiempo real nos dan insights que nunca tuvimos. Podemos rastrear el compromiso y optimizar campañas al instante.'
+        text: 'Solo el dashboard de analíticas vale la pena. Rastreamos engagement por vendedor, optimizamos nuestra estrategia de eventos y el ROI fue visible en el primer mes.'
       }
     },
     pricing: {
+      eyebrow: 'PRECIOS',
       title: 'Precios Simples y Transparentes',
-      subtitle: 'Elige el plan perfecto para tu negocio',
+      subtitle: 'Elige la tarjeta que refleje tu ambición',
       monthly: 'mes',
+      enterpriseNote: 'Para equipos de ventas y agencias inmobiliarias.',
       starter: {
-        name: 'Inicial',
-        price: '$49',
+        name: 'Esencial',
+        price: '$29',
         features: [
-          '5 Páginas QR',
-          'Análisis Básicos',
-          'Soporte por Email',
-          'Responsive Móvil',
-          'Marca Personalizada'
+          '1 Tarjeta NFC Inteligente (PVC)',
+          'Enrutamiento dinámico de links',
+          'Analíticas básicas de escaneo',
+          'Perfil optimizado para móvil',
+          'Soporte por email'
         ],
-        cta: 'Prueba Gratis'
+        cta: 'Ordenar Ahora'
       },
       professional: {
-        name: 'Profesional',
-        price: '$149',
-        recommended: 'Más Popular',
+        name: 'Pro',
+        price: '$79',
+        recommended: 'Mejor Valor',
         features: [
-          'Páginas QR Ilimitadas',
-          'Panel de Análisis Avanzado',
-          'Soporte Prioritario',
-          'Catálogos Interactivos',
-          'Integración WhatsApp',
-          'Dominio Personalizado',
-          'Pruebas A/B'
+          '1 Tarjeta NFC Inteligente (Metal)',
+          'Grabado láser personalizado',
+          'Dashboard avanzado de analíticas',
+          'Acceso al Generador QR incluido',
+          'Soporte prioritario',
+          'Perfil brandeado personalizado',
+          'Gestión de equipo (hasta 5)'
         ],
-        cta: 'Comenzar'
+        cta: 'Ir a Pro'
       },
       enterprise: {
         name: 'Empresarial',
         price: 'Personalizado',
         features: [
-          'Todo en Profesional',
-          'Gerente de Cuenta Dedicado',
-          'Integraciones Personalizadas',
-          'Solución White-label',
+          'Todo en Pro',
+          'Tarjetas ilimitadas para el equipo',
+          'Gerente de cuenta dedicado',
+          'Solución white-label',
+          'Integraciones CRM',
           'Garantía SLA',
-          'Capacitación',
           'Acceso API'
         ],
-        cta: 'Contactar Ventas'
+        cta: 'Contactar para Cotización'
       }
+    },
+    qrBanner: {
+      title: '¿Buscas crear códigos QR personalizados?',
+      subtitle: 'Nuestro Motor QR te permite generar códigos QR brandeados y rastreables en segundos.',
+      cta: 'Abrir Generador QR'
     },
     contact: {
       title: 'Contáctanos',
-      subtitle: '¿Listo para transformar tu presencia digital? ¡Hablemos!',
+      subtitle: '¿Listo para llevar tu networking al siguiente nivel? Hablemos.',
       form: {
         name: 'Nombre Completo',
         namePlaceholder: 'Juan Pérez',
         email: 'Correo Electrónico',
         emailPlaceholder: 'juan@ejemplo.com',
-        service: 'Servicio de Interés',
-        servicePlaceholder: 'Selecciona un servicio',
+        service: 'Interés',
+        servicePlaceholder: 'Selecciona una opción',
         message: 'Mensaje',
-        messagePlaceholder: 'Cuéntanos sobre tu proyecto...',
+        messagePlaceholder: 'Cuéntanos sobre tus necesidades...',
         submit: 'Enviar Mensaje',
         whatsapp: 'Chat por WhatsApp',
         sending: 'Enviando...'
       },
       services: [
-        'Páginas QR',
-        'Catálogos Interactivos',
-        'Paneles de Análisis',
-        'Solución Personalizada'
+        'Tarjetas NFC Inteligentes',
+        'Pedidos para Equipos',
+        'Branding Personalizado',
+        'Solución Empresarial'
       ],
       info: {
         name: 'David VERA',
@@ -379,10 +411,10 @@ export const translations = {
       }
     },
     footer: {
-      tagline: 'Transforma tus códigos QR en experiencias de marca',
+      tagline: 'Tarjetas inteligentes NFC premium con perfiles digitales dinámicos.',
       quickLinks: 'Enlaces Rápidos',
       followUs: 'Síguenos',
-      copyright: '© 2026 QR Factory. Todos los derechos reservados.',
+      copyright: '© 2026 CardFactory. Todos los derechos reservados.',
       email: 'david.vera9713@gmail.com'
     },
     notFound: {

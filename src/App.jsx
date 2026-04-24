@@ -37,7 +37,7 @@ const AppContent = () => {
   const location = useLocation();
   const isCardPreview = location.pathname === '/card-preview';
   const isAuth = location.pathname === '/login';
-  const isNotFound = !['/', '/services', '/pricing', '/contact', '/card-preview', '/dashboard', '/login'].includes(location.pathname);
+  const isNotFound = !['/', '/services', '/pricing', '/contact', '/card-preview', '/dashboard', '/login', '/qr-builder'].includes(location.pathname);
   const showLayout = !isNotFound && !isCardPreview && !isAuth;
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Shirt, Home, ShoppingCart, Briefcase, Megaphone } from 'lucide-react';
+import { Lightbulb, Palette, Building, UtensilsCrossed, HeartPulse, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const IndustriesSection = () => {
@@ -8,37 +8,37 @@ const IndustriesSection = () => {
 
   const industries = [
     {
-      icon: ShoppingBag,
+      icon: Lightbulb,
       name: t.industries.retail.name,
       useCases: t.industries.retail.useCases,
       gradient: 'from-orange-500 to-red-500'
     },
     {
-      icon: Shirt,
+      icon: Palette,
       name: t.industries.fashion.name,
       useCases: t.industries.fashion.useCases,
       gradient: 'from-pink-500 to-purple-500'
     },
     {
-      icon: Home,
+      icon: Building,
       name: t.industries.homeTextiles.name,
       useCases: t.industries.homeTextiles.useCases,
       gradient: 'from-green-500 to-emerald-500'
     },
     {
-      icon: ShoppingCart,
+      icon: UtensilsCrossed,
       name: t.industries.ecommerce.name,
       useCases: t.industries.ecommerce.useCases,
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Briefcase,
+      icon: HeartPulse,
       name: t.industries.services.name,
       useCases: t.industries.services.useCases,
       gradient: 'from-indigo-500 to-purple-500'
     },
     {
-      icon: Megaphone,
+      icon: TrendingUp,
       name: t.industries.agencies.name,
       useCases: t.industries.agencies.useCases,
       gradient: 'from-yellow-500 to-orange-500'

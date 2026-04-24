@@ -12,11 +12,18 @@ module.exports = {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px',
+				'2xl': '1280px',
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+			},
 			colors: {
+				'cf-black': '#000000',
+				'cf-surface': '#1a1a1a',
+				'cf-border': 'rgba(255, 255, 255, 0.1)',
+				'cf-chrome': '#e8e8e8',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -65,10 +72,20 @@ module.exports = {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: 0 },
 				},
+				'shimmer': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' },
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shimmer': 'shimmer 2.5s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
 			},
 		},
 	},
